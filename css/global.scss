@@ -1,0 +1,100 @@
+$color1:#F5F8FA;
+$color2:#A47FE5;
+$color3:#7A4FBC;
+$color4:#15A3EB;
+
+*{
+    box-sizing: border-box;
+}
+img{
+    width: 100%;
+}
+body{
+    background-image: url(../img/birrd2.jpg);
+}
+.navbar{
+    img{
+        width: 40px;
+    }
+    button{
+        padding: 7px;
+    }
+}
+#chirpTextBox {
+    border-radius: 15px;
+    z-index: 1;
+    box-shadow: 6px 12px 25px 5px;
+    margin-bottom: 20px;
+    height: 42px;
+}
+li {
+    margin: 7px;
+}
+.coolFont{
+    font-family: 'Pacifico', cursive;
+    font-size: 120px;
+    color: white;
+    opacity: .5;
+}
+#homePage{
+    margin-top: 80px;
+    font-family: 'Pacifico', cursive;
+    img{
+        width: 50%;
+        margin-left: 180px;
+    }
+    button{
+        margin-top: 30px;
+    }
+    h1{
+        font-size: 120px;
+        color: white;
+        opacity: .5;
+    }
+    h3{
+        font-size: 50px;
+        padding-top: 150px;
+        color: white;
+        opacity: .6;
+    }
+}
+.middle-left-section{
+    padding-top: 80px;
+    img{
+        background: $color3;
+        border-radius: 10px;
+    }
+}
+.chirpitem div:last-child{
+    margin-top: 10px;
+    max-width: 200px;
+    #chirp-length{
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow:  hidden;
+        width: 250%;
+    } 
+}
+.av-logo{
+    width: 50px;
+}
+.chirp-item-top-section{
+    display: inline-block;
+}
+.timeline {
+    overflow: scroll;
+    height: 90vh;
+}
+#chirp{
+    // h1{
+    //     font-size: 120px;
+    //     color: white;
+    //     opacity: .5;
+    // }
+    // h3{
+    //     font-size: 50px;
+    //     padding-top: 150px;
+    //     color: white;
+    //     opacity: .6;
+    // }
+}
