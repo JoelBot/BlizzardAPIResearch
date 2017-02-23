@@ -2,7 +2,7 @@
 - Joel Lonneker
 - Matt Tronvig
 
-Setup:
-- Run yarn
-- run npm start
-- (new console) run gulp
+Run:
+- yarn
+- npm start
+- (new console) gulp
