@@ -26,7 +26,7 @@ li {
 .coolFont {
   font-family: 'Pacifico', cursive;
   font-size: 120px;
-  color: white;
+  color: black;
   opacity: .5; }
 
 #homePage {
@@ -39,12 +39,12 @@ li {
     margin-top: 30px; }
   #homePage h1 {
     font-size: 120px;
-    color: white;
+    color: black;
     opacity: .5; }
   #homePage h3 {
     font-size: 50px;
     padding-top: 150px;
-    color: white;
+    color: black;
     opacity: .6; }
 
 .middle-left-section {
@@ -52,15 +52,6 @@ li {
   .middle-left-section img {
     background: #7A4FBC;
     border-radius: 10px; }
-
-.chirpitem div:last-child {
-  margin-top: 10px;
-  max-width: 200px; }
-  .chirpitem div:last-child #chirp-length {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 250%; }
 
 .av-logo {
   width: 50px; }

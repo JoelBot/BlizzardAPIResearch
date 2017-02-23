@@ -42,30 +42,30 @@ gulp.task('browserSync', function() {
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
-    return gulp.src("./css/**/*.scss")
+    return gulp.src("./css/*.scss")
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest("./css"))
         .pipe(browserSync.stream());
 });
 
 gulp.task('sass-build', function() {
-  return gulp.src("./css/**/*.scss")
+  return gulp.src("./css/*.scss")
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest("./css"))
 });
 
 gulp.task('sass:watch', function () {
-  gulp.watch('./css/**/*.scss', ['sass']);
+  gulp.watch('./css/*.scss', ['sass']);
 });
 
 gulp.task('serve', ['sass', 'browserSync'], function(){
     gulp.watch("*.html").on('change', browserSync.reload);
 
     gulp.watch("./components/**/*.js", ['webpack'])
-    gulp.watch("./js/**/*.js", ['webpack'])
-    gulp.watch("./css/**/*.scss", ['sass'])
+    gulp.watch("./js/*.js", ['webpack'])
+    gulp.watch("./css/*.scss", ['sass'])
 
-    gulp.watch("./js/**/*.js").on('change', browserSync.reload);
+    gulp.watch("./js/*.js").on('change', browserSync.reload);
     gulp.watch("./css/*.css").on('change', browserSync.reload);
 });
 
