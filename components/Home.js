@@ -16,7 +16,7 @@ class Home extends Component {
   componentDidMount() {
     fetch('https://us.api.battle.net/wow/character/fenris/tomes?locale=en_US&apikey=vp6vgjjs48wb4c567qd556e8zkvgzzwb')
     .then(response => response.json())
-    .then(console.log(response))
+    .then(response => console.log(response))
   }
 
     render() {
@@ -24,17 +24,7 @@ class Home extends Component {
                     <div id="homePage" className="row">
                         <div className="col-sm-12 text-center">
                             <h1>Welcome to Character Diffster!</h1>
-                            <h3>You did stuff, here is the proof.!</h3>
-                        </div>
-                        <div className="col-sm-6 text-center">
-                            <Link to={path + "/signin"}>
-                            <button id="signin" type="button" className="btn btn-primary btn-block" >SignIn</button>
-                            </Link>
-                        </div>
-                        <div className="col-sm-6">
-                            <Link to={path + "/signup"}>
-                            <button id="signup" type="button" className="btn btn-success btn-block" >SignUp</button>
-                            </Link>
+                            <h3>You did stuff, here is the proof: check the console -></h3>
                         </div>
                     </div>
                 </div>

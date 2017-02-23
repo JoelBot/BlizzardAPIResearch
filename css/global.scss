@@ -2,6 +2,7 @@ $color1:#F5F8FA;
 $color2:#A47FE5;
 $color3:#7A4FBC;
 $color4:#15A3EB;
+$color5:black;
 
 *{
     box-sizing: border-box;
@@ -33,7 +34,7 @@ li {
 .coolFont{
     font-family: 'Pacifico', cursive;
     font-size: 120px;
-    color: white;
+    color: $color5;
     opacity: .5;
 }
 #homePage{
@@ -48,13 +49,13 @@ li {
     }
     h1{
         font-size: 120px;
-        color: white;
+        color: $color5;
         opacity: .5;
     }
     h3{
         font-size: 50px;
         padding-top: 150px;
-        color: white;
+        color: $color5;
         opacity: .6;
     }
 }
@@ -63,16 +64,6 @@ li {
     img{
         background: $color3;
         border-radius: 10px;
-    }
-}
-.chirpitem div:last-child{
-    margin-top: 10px;
-    max-width: 200px;
-    #chirp-length{
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow:  hidden;
-        width: 250%;
     }
 }
 .av-logo{
@@ -84,17 +75,4 @@ li {
 .timeline {
     overflow: scroll;
     height: 90vh;
-}
-#chirp{
-    // h1{
-    //     font-size: 120px;
-    //     color: white;
-    //     opacity: .5;
-    // }
-    // h3{
-    //     font-size: 50px;
-    //     padding-top: 150px;
-    //     color: white;
-    //     opacity: .6;
-    // }
 }

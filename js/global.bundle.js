@@ -12767,7 +12767,9 @@ var Home = function (_Component) {
         value: function componentDidMount() {
             fetch('https://us.api.battle.net/wow/character/fenris/tomes?locale=en_US&apikey=vp6vgjjs48wb4c567qd556e8zkvgzzwb').then(function (response) {
                 return response.json();
-            }).then(console.log(response));
+            }).then(function (response) {
+                return console.log(response);
+            });
         }
     }, {
         key: 'render',
@@ -12789,33 +12791,7 @@ var Home = function (_Component) {
                         _react2.default.createElement(
                             'h3',
                             null,
-                            'You did stuff, here is the proof.!'
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'col-sm-6 text-center' },
-                        _react2.default.createElement(
-                            _reactRouter.Link,
-                            { to: path + "/signin" },
-                            _react2.default.createElement(
-                                'button',
-                                { id: 'signin', type: 'button', className: 'btn btn-primary btn-block' },
-                                'SignIn'
-                            )
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'col-sm-6' },
-                        _react2.default.createElement(
-                            _reactRouter.Link,
-                            { to: path + "/signup" },
-                            _react2.default.createElement(
-                                'button',
-                                { id: 'signup', type: 'button', className: 'btn btn-success btn-block' },
-                                'SignUp'
-                            )
+                            'You did stuff, here is the proof: check the console ->'
                         )
                     )
                 )
@@ -12834,6 +12810,10 @@ exports.default = Home;
 
 "use strict";
 
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -12870,10 +12850,38 @@ var APIDump = function (_Component) {
         return response.json();
       }).then(console.log(response));
     }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'div',
+          { id: 'APIDump', className: 'row' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col-sm-12 text-center' },
+            _react2.default.createElement(
+              'h1',
+              null,
+              'Welcome to Character Diffster!'
+            ),
+            _react2.default.createElement(
+              'h3',
+              null,
+              'You did stuff, here is the proof.!'
+            )
+          )
+        )
+      );
+    }
   }]);
 
   return APIDump;
-}(Component);
+}(_react.Component);
+
+exports.default = APIDump;
 
 /***/ }),
 /* 114 */
@@ -27670,18 +27678,11 @@ var _TestAPIDump2 = _interopRequireDefault(_TestAPIDump);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom2.default.render(_react2.default.createElement(
-    _reactRouter.Router,
-    { history: _reactRouter.browserHistory },
-    _react2.default.createElement(_reactRouter.Route, { path: path + "/", component: _Home2.default }),
-    '// ',
-    _react2.default.createElement(_reactRouter.Route, { path: path + "/dump", component: _TestAPIDump2.default }),
-    '// ',
-    _react2.default.createElement(_reactRouter.Route, { path: path + "/signup", component: Signup }),
-    '// ',
-    _react2.default.createElement(_reactRouter.Route, { path: path + "/signin", component: Signin }),
-    '// ',
-    _react2.default.createElement(_reactRouter.Route, { path: path + "/myprofile", component: MyProfile })
-), document.getElementById('homePage'));
+        _reactRouter.Router,
+        null,
+        _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Home2.default }),
+        _react2.default.createElement(_reactRouter.Route, { path: '/APIDump', component: _TestAPIDump2.default })
+), document.getElementById('app'));
 
 /***/ })
 /******/ ]);
