@@ -1,64 +1,61 @@
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 img {
-  width: 100%; }
-
-body {
-  background-image: url(../img/birrd2.jpg); }
+  width: 100%;
+}
 
 .navbar img {
-  width: 40px; }
+  width: 40px;
+}
 
 .navbar button {
-  padding: 7px; }
-
-#chirpTextBox {
-  border-radius: 15px;
-  z-index: 1;
-  box-shadow: 6px 12px 25px 5px;
-  margin-bottom: 20px;
-  height: 42px; }
+  padding: 7px;
+}
 
 li {
-  margin: 7px; }
+  margin: 7px;
+}
 
 .coolFont {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Press Start 2P', cursive;
   font-size: 120px;
   color: black;
-  opacity: .5; }
+  opacity: .5;
+}
 
 #homePage {
   margin-top: 80px;
-  font-family: 'Pacifico', cursive; }
-  #homePage img {
-    width: 50%;
-    margin-left: 180px; }
-  #homePage button {
-    margin-top: 30px; }
-  #homePage h1 {
-    font-size: 120px;
-    color: black;
-    opacity: .5; }
-  #homePage h3 {
-    font-size: 50px;
-    padding-top: 150px;
-    color: black;
-    opacity: .6; }
+  font-family: 'Press Start 2P', cursive;
+}
+
+#homePage img {
+  margin-left: 180px;
+}
+
+#homePage button {
+  margin-top: 30px;
+}
+
+#homePage h1 {
+  font-size: 120px;
+  color: black;
+  opacity: .5;
+}
+
+#homePage h3 {
+  font-size: 50px;
+  padding-top: 150px;
+  color: black;
+  opacity: .6;
+}
 
 .middle-left-section {
-  padding-top: 80px; }
-  .middle-left-section img {
-    background: #7A4FBC;
-    border-radius: 10px; }
+  padding-top: 80px;
+}
 
-.av-logo {
-  width: 50px; }
-
-.chirp-item-top-section {
-  display: inline-block; }
-
-.timeline {
-  overflow: scroll;
-  height: 90vh; }
+.middle-left-section img {
+  background: #7A4FBC;
+  border-radius: 10px;
+}
