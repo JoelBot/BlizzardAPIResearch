@@ -1,2 +1,4 @@
 node_modules
 config.js
+global.bundle.js
+global.css
