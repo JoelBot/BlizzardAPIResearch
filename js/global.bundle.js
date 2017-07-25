@@ -27422,12 +27422,12 @@ var Home = function (_Component) {
 
     _this.typing = _this.typing.bind(_this);
     _this.enter = _this.enter.bind(_this);
-    _this.updateState = _this.updateState.bind(_this);
+
     _this.state = {
       name: '',
       serverName: 'fenris',
       api: 'https://us.api.battle.net/wow/character/',
-      key: '?locale=en_US&apikey=',
+      locale: '?locale=en_US',
       thumbnail: '',
       lastUpdated: ''
 
@@ -27439,7 +27439,6 @@ var Home = function (_Component) {
     key: 'componentWillMount',
     value: function componentWillMount() {
       console.log('Console Will Mount...');
-      console.log(config.MY_KEY);
     }
   }, {
     key: 'componentDidMount',
@@ -27454,28 +27453,20 @@ var Home = function (_Component) {
   }, {
     key: 'enter',
     value: function enter(e) {
+      var _this2 = this;
+
       if (e.key === 'Enter') {
 
-        var mykey = _config2.default.MY_KEY;
-        fetch(this.state.api + this.state.serverName + '/' + this.state.name + this.state.key + mykey).then(function (response) {
+        fetch(this.state.api + this.state.serverName + '/' + this.state.name + this.state.locale + '&apikey=vp6vgjjs48wb4c567qd556e8zkvgzzwb').then(function (response) {
           return response.json();
         }).then(function (response) {
-          return updateState(response);
+          return _this2.setState({
+            thumbnail: 'http://render-api-us.worldofwarcraft.com/static-render/us/' + response.thumbnail,
+            // format http://render-api-us.worldofwarcraft.com/static-render/us/fenris/44/129984556-profilemain.jpg
+            lastUpdated: (0, _moment2.default)(response.lastModified).fromNow()
+          });
         });
       }
-    }
-  }, {
-    key: 'updateState',
-    value: function updateState(response) {
-
-      console.log(response);
-      console.log("hello");
-      this.setState({
-        name: response.name,
-        thumbnail: 'http://render-api-us.worldofwarcraft.com/static-render/us/' + response.thumbnail,
-        // http://render-api-us.worldofwarcraft.com/static-render/us/fenris/44/129984556-profilemain.jpg
-        lastUpdated: (0, _moment2.default)(response.lastModified).fromNow()
-      });
     }
   }, {
     key: 'render',
@@ -27497,33 +27488,31 @@ var Home = function (_Component) {
             _react2.default.createElement('br', null),
             _react2.default.createElement('br', null),
             _react2.default.createElement(
-              'label',
-              { htmlFor: 'charName' },
-              'Character Name:'
-            ),
-            _react2.default.createElement(
-              'span',
-              null,
-              ' '
-            ),
-            _react2.default.createElement('input', { type: 'text', id: 'charName', placeholder: 'Fabulon', value: this.state.name, onChange: this.typing, onKeyPress: this.enter }),
-            _react2.default.createElement(
               'div',
-              null,
-              ' ',
-              _react2.default.createElement('img', { src: this.state.thumbnail, alt: '' })
+              { className: 'col-sm-2' },
+              _react2.default.createElement(
+                'label',
+                { htmlFor: 'charName' },
+                'Character Name:'
+              ),
+              _react2.default.createElement('input', { type: 'text', id: 'charName', placeholder: 'Fabulon', value: this.state.name, onChange: this.typing, onKeyPress: this.enter })
             ),
             _react2.default.createElement(
               'div',
-              null,
-              '  Name: ',
-              this.state.name
-            ),
-            _react2.default.createElement(
-              'div',
-              null,
-              '  Last Updated: ',
-              this.state.lastUpdated
+              { className: 'col-sm-10' },
+              _react2.default.createElement('img', { src: this.state.thumbnail, alt: '' }),
+              _react2.default.createElement(
+                'div',
+                null,
+                '  Name: ',
+                this.state.name
+              ),
+              _react2.default.createElement(
+                'div',
+                null,
+                '  Last Updated: ',
+                this.state.lastUpdated
+              )
             )
           )
         )

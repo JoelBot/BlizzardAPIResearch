@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Config from '../config.js'
+import config from '../config'
 import { Link } from 'react-router'
 import moment from 'moment'
 
@@ -10,12 +10,12 @@ class Home extends Component {
     super(props)
     this.typing = this.typing.bind(this)
     this.enter = this.enter.bind(this)
-    this.updateState = this.updateState.bind(this)
+
     this.state = {
       name: '',
       serverName: 'fenris',
       api: 'https://us.api.battle.net/wow/character/',
-      key: '?locale=en_US&apikey=',
+      locale: '?locale=en_US',
       thumbnail: '',
       lastUpdated: ''
 
@@ -23,7 +23,7 @@ class Home extends Component {
   }
   componentWillMount() {
     console.log('Console Will Mount...') 
-    console.log(config.MY_KEY)
+
 
   }
   componentDidMount() {
@@ -37,25 +37,15 @@ typing (e) {
   enter(e) {
     if (e.key === 'Enter') {
 
-      var mykey = Config.MY_KEY
-          fetch(this.state.api + this.state.serverName + '/' + this.state.name + this.state.key + mykey)
+          fetch(this.state.api + this.state.serverName + '/' + this.state.name + this.state.locale +'&apikey=vp6vgjjs48wb4c567qd556e8zkvgzzwb')
           .then(response => response.json())
-          .then(response => updateState(response))
+          .then(response => this.setState({
+          thumbnail: 'http://render-api-us.worldofwarcraft.com/static-render/us/' + response.thumbnail,
+          // format http://render-api-us.worldofwarcraft.com/static-render/us/fenris/44/129984556-profilemain.jpg
+          lastUpdated: moment(response.lastModified).fromNow()
+      }))
     }
   }
-
-  updateState(response) {
-
-    console.log(response)
-    console.log("hello")
-      this.setState({
-          name: response.name,
-          thumbnail: 'http://render-api-us.worldofwarcraft.com/static-render/us/' + response.thumbnail,
-          // http://render-api-us.worldofwarcraft.com/static-render/us/fenris/44/129984556-profilemain.jpg
-          lastUpdated: moment(response.lastModified).fromNow()
-      })
-
-    }
 
     render() {
         return  <div>
@@ -64,16 +54,17 @@ typing (e) {
                             <h1>Welcome to Character Diffster!</h1>
                               <br />
                               <br />
-                            <label htmlFor="charName">Character Name:</label>
-                            <span> </span>
-                            <input type="text" id="charName" placeholder="Fabulon" value={this.state.name} onChange={this.typing} onKeyPress={this.enter}></input>
-                              
-                              <div> <img src={this.state.thumbnail} alt="" /></div>
+                            <div className="col-sm-2">
+                              <label htmlFor="charName">Character Name:</label>
+                              {/* <span> </span> */}
+                              <input type="text" id="charName" placeholder="Fabulon" value={this.state.name} onChange={this.typing} onKeyPress={this.enter}></input>
+                            </div>
+                            <div className="col-sm-10">
+                              <img src={this.state.thumbnail} alt="" />
                               <div>  Name: {this.state.name}</div>
                               <div>  Last Updated: {this.state.lastUpdated}</div>
-
+                            </div>
                         </div>
-
                     </div>
                 </div>
 
