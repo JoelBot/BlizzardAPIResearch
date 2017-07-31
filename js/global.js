@@ -1,12 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Route, Link, browserHistory } from 'react-router'
+import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router'
+// import Config from '../config.js'
+
+import Framework from '../components/Framework'
 import Home from '../components/Home'
-import Config from '../config.js'
+
 
 ReactDOM.render(
         <Router>
-          <Route path='/' component={Home} />
+          <Route path='/' component={Framework}>
+            <IndexRoute component={Home} />
+          </Route>
 
         </Router>
     , document.getElementById('app')
